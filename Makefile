@@ -4,8 +4,8 @@ all: out/telnetd-$(GIT_COMMIT).hmod
 
 out/telnetd-$(GIT_COMMIT).hmod:
 	mkdir -p out/
-	chmod +x "mod/etc/init.d/S93telnetd"
-	[ -f "out/telnetd-$(GIT_COMMIT).hmod" ] || tar -czvf "out/telnetd-$(GIT_COMMIT).hmod" -C mod/ etc
+	tar -czvf "$@" -C mod/ etc
+	touch "$@"
 
 clean: clean-hmod
 
